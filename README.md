@@ -69,7 +69,7 @@ cd Arduino_Projects
   - Dynamic assignment of switches to LEDs
   - Visual feedback with LEDs
   - A fun and interactive puzzle experience
-- [View Project Files](./Magic_Switchboard/README.md)
+- [View Project Files](./Magic_Switchboard/README.MD)
 
 ## ✨ Features Across Projects
 
