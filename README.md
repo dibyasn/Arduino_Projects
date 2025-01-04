@@ -10,7 +10,7 @@ Here’s a list of the projects available in this repository:
 
 1. [🐍 Snake Game](./🐍Snake_Game/README.md)
 2. [Automated Watering System](./Automated_Watering_System/README.md)
-3. [Magic Switchboard](./Magic_Switchboard/README.md)
+3. [Magic Switchboard](./Magic_Switchboard/README.MD)
 
 > 📌 **Note**: Each project folder contains a `README.md` file with detailed instructions and explanations specific to that project.
 
