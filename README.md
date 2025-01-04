@@ -10,6 +10,7 @@ Here’s a list of the projects available in this repository:
 
 1. [🐍 Snake Game](./🐍Snake_Game/README.md)
 2. [Automated Watering System](./Automated_Watering_System/README.md)
+3. [Magic Switchboard](./Magic_Switchboard/README.md)
 
 > 📌 **Note**: Each project folder contains a `README.md` file with detailed instructions and explanations specific to that project.
 
@@ -60,6 +61,15 @@ cd Arduino_Projects
   - Audio feedback using DFPlayer Mini for notifications
   - OLED display animations for visual feedback (crying face for dry soil, smiling face for well-watered plants)
 - [View Project Files](./Automated_Watering_System/README.md)
+
+### 3. 🔧 Magic Switchboard
+
+- **Description**: A fascinating switchboard puzzle that involves swapping positions of switches and light caps while maintaining the rule that a switch always controls its corresponding light.
+- **Features**:
+  - Dynamic assignment of switches to LEDs
+  - Visual feedback with LEDs
+  - A fun and interactive puzzle experience
+- [View Project Files](./Magic_Switchboard/README.md)
 
 ## ✨ Features Across Projects
 
