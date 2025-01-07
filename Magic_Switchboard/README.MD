@@ -1,10 +1,9 @@
 # Magic Switchboard
 
 <p align="center">
-    <video controls>
-        <source src="./Assets/Project_Video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    <a href="https://www.youtube.com/shorts/B3GOsys1LTc" target="_blank">
+        <img src="https://img.youtube.com/vi/B3GOsys1LTc/hqdefault.jpg" alt="Watch the Video" style="width:80%; max-width:600px;">
+    </a>
 </p>
 
 Welcome to the Magic Switchboard project! This intriguing project demonstrates a creative approach to mapping switches to LEDs, where even after swapping caps or bulbs, each switch always lights up its respective color.
