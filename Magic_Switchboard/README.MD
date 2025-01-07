@@ -136,6 +136,7 @@ void updateLEDs() {
 
 - [Project Documentation](./Assets/Magic_Switchboard.pdf)
 - [Source Code](./Assets/Code/Code.ino)
+- [Working Explanation](https://www.youtube.com/watch?v=JOVQ8KCsOPs)
 
 ## 🖥️ Usage
 
