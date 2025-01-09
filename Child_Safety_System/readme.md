@@ -18,6 +18,11 @@ The **Child Safety Washroom System** is designed to enhance safety in washrooms 
   - [📜 Code Explanation](#-code-explanation)
     - [Key Features in Code:](#key-features-in-code)
   - [📚 Required Libraries](#-required-libraries)
+  - [🚀 Setup Instructions](#-setup-instructions)
+    - [1. Clone the Repository](#1-clone-the-repository)
+    - [2. Install Required Libraries](#2-install-required-libraries)
+    - [3. Assemble the Circuit](#3-assemble-the-circuit)
+    - [4. Upload the Code](#4-upload-the-code)
   - [🚀 Usage Instructions](#-usage-instructions)
   - [🔧 Troubleshooting](#-troubleshooting)
   - [📦 Future Improvements](#-future-improvements)
@@ -43,7 +48,7 @@ The **Child Safety Washroom System** is designed to enhance safety in washrooms 
 
 ## 🛠️ Components Required
 
-- **Arduino Board** (e.g., ESP32)
+- **ESP32** 
 - **Ultrasonic Sensor** (HC-SR04)
 - **OLED Display** (SSD1306, 128x64 resolution)
 - **Buzzer**
@@ -117,6 +122,31 @@ Ensure the following libraries are installed in your Arduino IDE:
 - **NewPing**: For using the ultrasonic sensor. Install via Arduino Library Manager or from [NewPing GitHub Repository](https://bitbucket.org/teckel12/arduino-new-ping/wiki/Home).
 
 ---
+
+## 🚀 Setup Instructions
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/dibyasn/Arduino_Projects.git
+cd Arduino_Projects/Child_Safety_System
+```
+
+### 2. Install Required Libraries
+Ensure you have the following libraries installed in your Arduino IDE:
+- **Adafruit GFX Library** 🌐
+- **Adafruit SSD1306 Library** 🌐
+- **NewPing Library** 🌐
+
+### 3. Assemble the Circuit
+Use the wiring diagram provided in the **Hardware Setup** section to connect all components.
+
+### 4. Upload the Code
+1. Open the Arduino IDE.
+2. Select the correct **Board** and **Port**.
+3. Navigate to the `Code` folder and upload the `Code.ino` sketch.
+
+---
+
 
 ## 🚀 Usage Instructions
 
