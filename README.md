@@ -11,7 +11,7 @@ Here’s a list of the projects available in this repository:
 1. [🐍 Snake Game](./🐍Snake_Game/README.md)
 2. [Automated Watering System](./Automated_Watering_System/README.md)
 3. [Magic Switchboard](./Magic_Switchboard/README.MD)
-4. [Child Safety System](./Child_Safety_System/README.md)
+4. [Child Safety System](./Child_Safety_System/readme.md)
 
 > 📌 **Note**: Each project folder contains a `README.md` file with detailed instructions and explanations specific to that project.
 
@@ -57,16 +57,6 @@ cd Arduino_Projects
 
 - **Description**: A smart irrigation system that automatically waters plants based on soil moisture levels. This project uses sensors to monitor soil moisture and controls a water pump via a relay to water plants when necessary.
 
-### 4. Child Safety System
-
-- **Description**: A system designed to enhance child safety in washrooms using an SOS button, timer-based alerts, and an ultrasonic sensor for monitoring occupancy.
-- **Features**:
-  - SOS button for emergency alerts
-  - Timer to detect prolonged occupancy
-  - Ultrasonic sensor for real-time presence detection
-  - Visual and audio alerts for notifications
-- [View Project Files](./Child_Safety_System/README.md)
-
 - **Features**:
   - Soil moisture sensor for monitoring water levels
   - Water pump controlled via a relay module
@@ -82,6 +72,16 @@ cd Arduino_Projects
   - Visual feedback with LEDs
   - A fun and interactive puzzle experience
 - [View Project Files](./Magic_Switchboard/README.MD)
+
+### 4. Child Safety System
+
+- **Description**: A system designed to enhance child safety in washrooms using an SOS button, timer-based alerts, and an ultrasonic sensor for monitoring occupancy.
+- **Features**:
+  - SOS button for emergency alerts
+  - Timer to detect prolonged occupancy
+  - Ultrasonic sensor for real-time presence detection
+  - Visual and audio alerts for notifications
+- [View Project Files](./Child_Safety_System/readme.md)
 
 ## ✨ Features Across Projects
 
