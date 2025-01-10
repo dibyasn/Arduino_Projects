@@ -111,6 +111,12 @@ Refer to the following pin connections:
 5. **OLED Updates**:
    - Displays system status and elapsed time dynamically.
 
+6. **Blinking Alerts**:
+   - Red LED blinks when alerts are active.
+
+7. **Sound Alerts**:
+   - Buzzer emits sound during alerts to signal emergencies.
+
 ---
 
 ## 📚 Required Libraries

@@ -6,8 +6,9 @@
 // Pin Definitions
 #define TRIG_PIN 15
 #define ECHO_PIN 13
-#define BUZZER_PIN 26
-#define LED_PIN 12
+#define BUZZER_PIN 15
+#define RED_LED_PIN 12
+#define GREEN_LED_PIN 14
 #define SOS_BUTTON_PIN 32
 #define OLED_SDA 21
 #define OLED_SCL 22
@@ -20,13 +21,16 @@
 #define MAX_DISTANCE 200 // Maximum distance for the ultrasonic sensor in cm
 #define DETECTION_THRESHOLD 10 // Distance threshold to detect presence (in cm)
 #define TIME_LIMIT 1200 // Time limit in seconds (20 minutes)
+#define BLINK_INTERVAL 500 // Blink interval in milliseconds
 
 // Global Variables
 NewPing sonar(TRIG_PIN, ECHO_PIN, MAX_DISTANCE);
 Adafruit_SSD1306 display(128, 64, &Wire, -1);
 unsigned long startTime = 0;
+unsigned long lastBlinkTime = 0;
 bool isPersonDetected = false;
 bool sosTriggered = false;
+bool isRedLedOn = false;
 
 void IRAM_ATTR handleSOS() {
     sosTriggered = true;
@@ -38,7 +42,8 @@ void setup() {
 
     // Initialize pins
     pinMode(BUZZER_PIN, OUTPUT);
-    pinMode(LED_PIN, OUTPUT);
+    pinMode(RED_LED_PIN, OUTPUT);
+    pinMode(GREEN_LED_PIN, OUTPUT);
     pinMode(SOS_BUTTON_PIN, INPUT_PULLDOWN);
 
     // Attach interrupt for SOS button
@@ -49,13 +54,11 @@ void setup() {
         Serial.println(F("SSD1306 allocation failed"));
         for (;;); // Don't proceed, loop forever
     }
-    resetSystem();
     display.clearDisplay();
     display.display();
 
-    // Startup message
-    displayMessage("System Initialized", "Waiting for Activity");
-    delay(2000);
+    // Reset system state
+    resetSystem();
 }
 
 void loop() {
@@ -69,6 +72,7 @@ void loop() {
             startTime = currentTime;
         }
         displayElapsedTime(currentTime - startTime);
+        indicateOccupied();
     } else {
         isPersonDetected = false;
         resetSystem();
@@ -85,22 +89,41 @@ void loop() {
         triggerAlert("Time Limit Exceeded");
     }
 
-    delay(500); // Small delay to prevent excessive processing
+    delay(100); // Small delay to prevent excessive processing
 }
 
 void triggerAlert(const char *message) {
-    digitalWrite(BUZZER_PIN, ACTIVE_STATE);
-    digitalWrite(LED_PIN, ACTIVE_STATE);
-    displayMessage("ALERT!", message);
     while (true) {
-        // Remain in alert state until manually reset
+        unsigned long currentTime = millis();
+
+        // Blink red LED
+        if (currentTime - lastBlinkTime >= BLINK_INTERVAL) {
+            lastBlinkTime = currentTime;
+            isRedLedOn = !isRedLedOn;
+            digitalWrite(RED_LED_PIN, isRedLedOn ? ACTIVE_STATE : INACTIVE_STATE);
+        }
+
+        // Make danger noise with buzzer
+        digitalWrite(BUZZER_PIN, ACTIVE_STATE);
+        delay(100);
+        digitalWrite(BUZZER_PIN, INACTIVE_STATE);
+        delay(100);
+
+        // Display alert message
+        displayMessage("ALERT!", message);
     }
 }
 
 void resetSystem() {
     digitalWrite(BUZZER_PIN, INACTIVE_STATE);
-    digitalWrite(LED_PIN, INACTIVE_STATE);
+    digitalWrite(RED_LED_PIN, INACTIVE_STATE);
+    digitalWrite(GREEN_LED_PIN, ACTIVE_STATE);
     displayMessage("System Reset", "Waiting for Activity");
+}
+
+void indicateOccupied() {
+    digitalWrite(RED_LED_PIN, ACTIVE_STATE);
+    digitalWrite(GREEN_LED_PIN, INACTIVE_STATE);
 }
 
 void displayMessage(const char *line1, const String &line2) {
