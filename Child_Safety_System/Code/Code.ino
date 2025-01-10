@@ -1,4 +1,5 @@
 // Child Safety Washroom System with SOS Button and Timer
+#include <Arduino.h>
 #include <NewPing.h>
 #include <Wire.h>
 #include <Adafruit_SSD1306.h>
@@ -6,7 +7,7 @@
 // Pin Definitions
 #define TRIG_PIN 15
 #define ECHO_PIN 13
-#define BUZZER_PIN 15
+#define BUZZER_PIN 26
 #define RED_LED_PIN 12
 #define GREEN_LED_PIN 14
 #define SOS_BUTTON_PIN 32
@@ -95,7 +96,7 @@ void loop() {
 void triggerAlert(const char *message) {
     while (true) {
         unsigned long currentTime = millis();
-
+        digitalWrite(GREEN_LED_PIN, INACTIVE_STATE);
         // Blink red LED
         if (currentTime - lastBlinkTime >= BLINK_INTERVAL) {
             lastBlinkTime = currentTime;
