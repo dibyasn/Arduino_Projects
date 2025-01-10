@@ -48,11 +48,11 @@ The **Child Safety Washroom System** is designed to enhance safety in washrooms 
 
 ## 🛠️ Components Required
 
-- **ESP32** 
+- **ESP32**
 - **Ultrasonic Sensor** (HC-SR04)
 - **OLED Display** (SSD1306, 128x64 resolution)
 - **Buzzer**
-- **LED**
+- **LEDs** (Red and Green)
 - **SOS Button**
 - **Resistors**
 - Jumper wires and breadboard
@@ -66,23 +66,26 @@ The **Child Safety Washroom System** is designed to enhance safety in washrooms 
    - **ECHO_PIN**: GPIO 13
 2. **Buzzer**:
    - Connected to GPIO 26
-3. **LED**:
+3. **Red LED**:
    - Connected to GPIO 12
-4. **SOS Button**:
+4. **Green LED**:
+   - Connected to GPIO 14
+5. **SOS Button**:
    - Connected to GPIO 32 with a pull-down resistor.
-5. **OLED Display**:
+6. **OLED Display**:
    - **SDA**: GPIO 21
    - **SCL**: GPIO 22
 
 ### Wiring Diagram
 Refer to the following pin connections:
 
-| Component         | Arduino Pin |
+| Component         | ESP32 Pin   |
 |-------------------|-------------|
 | Ultrasonic TRIG   | GPIO 15     |
 | Ultrasonic ECHO   | GPIO 13     |
 | Buzzer            | GPIO 26     |
-| LED               | GPIO 12     |
+| Red LED           | GPIO 12     |
+| Green LED         | GPIO 14     |
 | SOS Button        | GPIO 32     |
 | OLED SDA          | GPIO 21     |
 | OLED SCL          | GPIO 22     |
