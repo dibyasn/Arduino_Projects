@@ -72,11 +72,11 @@ To assemble the circuit, follow these steps:
    - Use jumper wires to connect the cathodes of all LEDs to the GND pin of the Arduino via the breadboard’s ground rail.
 
 3. **Connect LED Anodes to Arduino Pins:**
-   - Connect the anodes (long legs) of the LEDs to Arduino pins 7, 8, 9, and 10 using jumper wires.
+   - Connect the anodes (long legs) of the LEDs to Arduino pins 2, 3, 4, and 5 using jumper wires.
 
 4. **Connect Switches to Arduino Pins:**
    - Attach one terminal of each switch to the ground rail on the breadboard.
-   - Connect the other terminal of each switch to Arduino pins 2, 3, 4, and 5.
+   - Connect the other terminal of each switch to Arduino pins 7, 8, 9, and 10.
 
 5. **Add Pull-up Resistors:**
    - The Arduino’s internal pull-up resistors will handle input stability, so no additional external resistors are required.
