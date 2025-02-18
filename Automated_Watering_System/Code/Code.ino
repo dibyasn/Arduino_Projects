@@ -7,9 +7,9 @@
 #define SCREEN_HEIGHT 64
 #define OLED_RESET    -1
 #define SOIL_MOISTURE_PIN 34
-#define CH1 5
-#define PUMP_1 25
-#define PUMP_2 26
+#define EN1 5           // Motor Driver EN1 to ESP32 5
+#define IN1 25          // Motor Driver IN1 to ESP32 25
+#define IN2 26          // Motor Driver IN2 to ESP32 26
 
 #define DF_PLAYER_RX_PIN 16           // DF-player RX pin 
 #define DF_PLAYER_TX_PIN 17           // DF-player TX pin
@@ -105,13 +105,13 @@ void setup() {
 
     // Initialize the soil moisture sensor and pump pins
     pinMode(SOIL_MOISTURE_PIN, INPUT);
-    pinMode(CH1, OUTPUT);
-    pinMode(PUMP_1, OUTPUT);
-    pinMode(PUMP_2, OUTPUT);
+    pinMode(EN1, OUTPUT);
+    pinMode(IN1, OUTPUT);
+    pinMode(IN2, OUTPUT);
 
-    digitalWrite(CH1, LOW);
-    digitalWrite(PUMP_1, LOW);
-    digitalWrite(PUMP_2, LOW);
+    digitalWrite(EN1, LOW);
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, LOW);
 
     // Initialize the DFPlayer Mini
     DF_Player_Serial.begin(9600); // for the DF player
@@ -130,9 +130,9 @@ void loop() {
 
     // Check the soil moisture value and control the pump
     if (soilMoistureValue > 2000) {
-        digitalWrite(CH1, HIGH);
-        digitalWrite(PUMP_1, HIGH);
-        digitalWrite(PUMP_2, LOW);
+        digitalWrite(EN1, HIGH);
+        digitalWrite(IN1, HIGH);
+        digitalWrite(IN2, LOW);
         Serial.println("Pump State: ON");
          
          
@@ -147,9 +147,9 @@ void loop() {
         display.clearDisplay();
         display.drawBitmap(40, 8, frames1[frame], FRAME_WIDTH, FRAME_HEIGHT, 1);
     } else {
-        digitalWrite(CH1, LOW);
-        digitalWrite(PUMP_1, LOW);
-        digitalWrite(PUMP_2, LOW);
+        digitalWrite(EN1, LOW);
+        digitalWrite(IN1, LOW);
+        digitalWrite(IN2, LOW);
         Serial.println("Pump State: OFF");
 
         // Reset audio played flag when moisture level is sufficient

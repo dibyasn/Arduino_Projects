@@ -12,7 +12,7 @@ Welcome to the Automated Watering System project! This system leverages a soil m
       - [OLED Display:](#oled-display)
       - [Soil Moisture Sensor:](#soil-moisture-sensor)
       - [DFPlayer Mini:](#dfplayer-mini)
-      - [Pumps:](#pumps)
+      - [Motor Driver:](#motor-driver)
   - [🚀 Setup Instructions](#-setup-instructions)
     - [1. Clone the Repository](#1-clone-the-repository)
     - [2. Install Required Libraries](#2-install-required-libraries)
@@ -36,7 +36,8 @@ This project automates the task of watering plants by monitoring soil moisture l
 - **Soil Moisture Sensor**
 - **0.96" OLED Display** (SSD1306)
 - **DFPlayer Mini** (for audio)
-- **Pumps (2)**
+- **L293D Motor Driver**
+- **Pump**
 - **Jumper Wires**
 - **Breadboard**
 
@@ -72,12 +73,13 @@ This project automates the task of watering plants by monitoring soil moisture l
   GND ---------------> GND
 ```
 
-#### Pumps:
+#### Motor Driver:
 ```plaintext
-  Pumps               ESP32
+  Motor Driver        ESP32
   -----               ----
-  Pump 1 ------------> GPIO25
-  Pump 2 ------------> GPIO26
+  EN1 ------------> GPIO5
+  IN1 ------------> GPIO25
+  IN2 ------------> GPIO26
 ```
 
 ## 🚀 Setup Instructions
@@ -114,10 +116,14 @@ Use the circuit diagram above to connect the components to the ESP32.
 #### Soil Moisture Logic
 ```cpp
 if (soilMoistureValue > 2000) {
-    digitalWrite(PUMP_1, HIGH);
+    digitalWrite(EN1, HIGH);
+    digitalWrite(IN1, HIGH);
+    digitalWrite(IN2, LOW);
     display.drawBitmap(40, 8, frames1[frame], FRAME_WIDTH, FRAME_HEIGHT, 1);
 } else {
-    digitalWrite(PUMP_1, LOW);
+    digitalWrite(EN1, LOW);
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, LOW);
     display.drawBitmap(40, 8, frames2[frame], FRAME_WIDTH, FRAME_HEIGHT, 1);
 }
 ```
