@@ -1,7 +1,7 @@
 # 7x5 NeoPixel Custom Display
 
 <p align="center">
-    <img src="./assets/display_demo.gif" alt="NeoPixel Display Demo" style="width:40%; max-width:600px;">
+    <img src="./Assets/display_demo.gif" alt="NeoPixel Display Demo" style="width:40%; max-width:600px;">
 </p>
 
 An elegant web-controlled LED matrix display that brings your pixels to life with customizable text, numbers, and interactive drawing capabilities.
@@ -42,7 +42,7 @@ The ESP32 7x5 NeoPixel Custom Display project creates a versatile LED matrix dis
 ## 🔌 Circuit Diagram
 
 <p align="center">
-    <img src="./assets/circuit_diagram.png" alt="Circuit Diagram" style="max-width:60%;">
+    <img src="./Assets/circuit_diagram.png" alt="Circuit Diagram" style="max-width:60%;">
 </p>
 
 | Strip (Column) | GPIO Pin | Description |
@@ -126,7 +126,7 @@ const uint8_t font5x7[][5] = {
 ### Web Interface Overview
 
 <p align="center">
-    <img src="./assets/ui_overview.png" alt="Web Interface Overview" style="width:60%; max-width:600px;">
+    <img src="./Assets/ui_overview.png" alt="Web Interface Overview" style="width:60%; max-width:600px;">
 </p>
 
 1. **Power up the ESP32**
@@ -137,13 +137,13 @@ const uint8_t font5x7[][5] = {
 ### Interface Modes
 
 <p align="center">
-    <img src="./assets/display_modes.png" alt="Display Modes" style="width:60%; max-width:600px;">
+    <img src="./Assets/display_modes.png" alt="Display Modes" style="width:60%; max-width:600px;">
 </p>
 
-3. **Access Interface:**
+1. **Access Interface:**
    - Open browser
    - Navigate to ESP32's IP
-4. **Control Display:**
+2. **Control Display:**
    - Select display mode
    - Choose colors
    - Adjust brightness
@@ -152,13 +152,13 @@ const uint8_t font5x7[][5] = {
 ### Interactive Drawing Mode
 
 <p align="center">
-    <img src="./assets/drawing_mode.png" alt="Drawing Mode Interface" style="width:60%; max-width:600px;">
+    <img src="./Assets/drawing_mode.png" alt="Drawing Mode Interface" style="width:60%; max-width:600px;">
 </p>
 
 ### Color and Brightness Controls
 
 <p align="center">
-    <img src="./assets/controls.png" alt="Color and Brightness Controls" style="width:60%; max-width:600px;">
+    <img src="./Assets/controls.png" alt="Color and Brightness Controls" style="width:60%; max-width:600px;">
 </p>
 
 ## 🎉 Acknowledgments
