@@ -1,7 +1,8 @@
 /*
   Project: ESP32 7x5 NeoPixel Custom Display (v1.4)
-  Author: [Your Name or GitHub Username]
-  Version: 1.4
+  Author: Dibyaranjan
+  Wokwi: https://wokwi.com/projects/432085438483885057  (Test_Program)
+  GitHub: GitHub: https://github.com/dibyasn
   Features: Web-controlled LED matrix with font and custom draw support
 
   ------------------------ About Project ------------------------
